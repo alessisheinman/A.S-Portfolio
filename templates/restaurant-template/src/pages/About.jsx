@@ -84,7 +84,7 @@ const About = () => {
               className="h-full overflow-hidden"
             >
               <img
-                src="/images/tables.jpg"
+                src={`${import.meta.env.BASE_URL}images/tables.jpg`}
                 alt="Prime Cut dining room"
                 className="w-full h-full object-cover min-h-[500px]"
               />
@@ -144,7 +144,7 @@ const About = () => {
               className="h-full overflow-hidden"
             >
               <img
-                src="/images/chef.jpg"
+                src={`${import.meta.env.BASE_URL}images/chef.jpg`}
                 alt="Executive Chef at work"
                 className="w-full h-full object-cover min-h-[500px]"
               />
@@ -186,7 +186,7 @@ const About = () => {
               className="h-full overflow-hidden"
             >
               <img
-                src="/images/meal.jpg"
+                src={`${import.meta.env.BASE_URL}images/meal.jpg`}
                 alt="Bella's Ristorante cuisine"
                 className="w-full h-full object-cover min-h-[500px]"
               />

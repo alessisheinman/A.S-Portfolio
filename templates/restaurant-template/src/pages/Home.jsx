@@ -19,7 +19,7 @@ const Home = () => {
           animate={{ scale: 1 }}
           transition={{ duration: 20, ease: "linear" }}
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: 'url(/images/tables.jpg)' }}
+          style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/tables.jpg)` }}
         />
         {/* Gradient Overlays */}
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
@@ -51,7 +51,7 @@ const Home = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              src="/images/logo.png"
+              src={`${import.meta.env.BASE_URL}images/logo.png`}
               alt="Bella's Ristorante"
               className="h-48 md:h-64 lg:h-72 w-auto mb-8 drop-shadow-2xl"
             />
@@ -187,7 +187,7 @@ const Home = () => {
               className="h-full overflow-hidden"
             >
               <img
-                src="/images/tables.jpg"
+                src={`${import.meta.env.BASE_URL}images/tables.jpg`}
                 alt="Bella's Ristorante dining room"
                 className="w-full h-full object-cover min-h-[500px] lg:min-h-[600px] hover:scale-105 transition-transform duration-700"
               />
@@ -209,7 +209,7 @@ const Home = () => {
               className="h-full overflow-hidden order-2 lg:order-1"
             >
               <img
-                src="/images/bar.webp"
+                src={`${import.meta.env.BASE_URL}images/bar.webp`}
                 alt="The Bar at Bella's"
                 className="w-full h-full object-cover min-h-[500px] lg:min-h-[600px] hover:scale-105 transition-transform duration-700"
               />
@@ -297,7 +297,7 @@ const Home = () => {
         {/* Background */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-fixed"
-          style={{ backgroundImage: 'url(/images/chef.jpg)' }}
+          style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/chef.jpg)` }}
         >
           <div className="absolute inset-0 bg-black/80" />
         </div>

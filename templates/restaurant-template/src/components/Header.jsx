@@ -16,7 +16,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center -my0">
             <img
-              src="/images/logo.png"
+              src={`${import.meta.env.BASE_URL}images/logo.png`}
               alt="Bella's Ristorante"
               className="h-28 md:h-12 w-auto"
             />

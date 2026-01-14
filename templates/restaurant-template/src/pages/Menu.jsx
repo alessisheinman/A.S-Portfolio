@@ -289,7 +289,7 @@ const Menu = () => {
             transition={{ duration: 0.6 }}
           >
             <img
-              src="/images/food-and-drink.png"
+              src={`${import.meta.env.BASE_URL}images/food-and-drink.png`}
               alt="Food & Drink"
               className="h-20 md:h-20 w-auto mx-auto -mb-8"
               style={{ transform: 'scaleX(1.3)' }}

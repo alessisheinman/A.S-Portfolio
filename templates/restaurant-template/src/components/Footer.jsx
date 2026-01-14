@@ -9,7 +9,7 @@ const Footer = () => {
           {/* About Section */}
           <div>
             <img
-              src="/images/logo.png"
+              src={`${import.meta.env.BASE_URL}images/logo.png`}
               alt="Bella's Ristorante"
               className="h-20 w-auto mb-4"
             />
