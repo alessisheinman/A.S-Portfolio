@@ -8,7 +8,7 @@ import Contact from './pages/Contact';
 
 function App() {
   return (
-    <Router basename="/templates/restaurant">
+    <Router basename="/A.S-Portfolio/templates/restaurant">
       <div className="flex flex-col min-h-screen">
         <Header />
         <main className="flex-grow">

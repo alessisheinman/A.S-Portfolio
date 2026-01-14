@@ -539,7 +539,7 @@ const ServicesSection = () => {
 // Helper to switch between dev (localhost) and production (static) URLs
 const getTemplateUrl = (prodPath, devPort) => {
   const isDev = import.meta.env.DEV;
-  return isDev ? `http://localhost:${devPort}/` : prodPath;
+  return isDev ? `http://localhost:${devPort}/` : `/A.S-Portfolio${prodPath}`;
 };
 
 const TemplatesSection = () => {

@@ -11,7 +11,7 @@ import Contact from './pages/Contact';
 function App() {
   return (
     <CartProvider>
-      <Router basename="/templates/clothing-store">
+      <Router basename="/A.S-Portfolio/templates/clothing-store">
         <div className="flex flex-col min-h-screen">
           <Header />
           <main className="flex-grow">
