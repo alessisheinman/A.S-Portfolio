@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-luxury-darker text-white font-sans;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    @apply bg-gold-500/30 text-gold-300;
+  }
+}
+
+@layer components {
+  .text-gradient {
+    @apply bg-gradient-to-r from-gold-400 via-gold-300 to-gold-500 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-shimmer {
+    @apply bg-gradient-to-r from-gold-400 via-white to-gold-400 bg-clip-text text-transparent bg-300% animate-shimmer;
+  }
+
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+
+  .glass-dark {
+    @apply bg-black/40 backdrop-blur-xl border border-white/5;
+  }
+
+  .btn-luxury {
+    @apply relative px-8 py-4 bg-gradient-to-r from-gold-600 via-gold-500 to-gold-600
+           text-luxury-darker font-semibold uppercase tracking-widest text-sm
+           overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-gold-500/30
+           before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent
+           before:via-white/30 before:to-transparent before:translate-x-[-200%]
+           hover:before:translate-x-[200%] before:transition-transform before:duration-700;
+  }
+
+  .btn-outline {
+    @apply relative px-8 py-4 border-2 border-gold-500 text-gold-400
+           font-semibold uppercase tracking-widest text-sm
+           overflow-hidden transition-all duration-500
+           hover:bg-gold-500 hover:text-luxury-darker hover:shadow-2xl hover:shadow-gold-500/20;
+  }
+
+  .section-title {
+    @apply font-display text-5xl md:text-7xl font-bold mb-6;
+  }
+
+  .section-subtitle {
+    @apply text-gold-400 uppercase tracking-[0.3em] text-sm font-medium mb-4;
+  }
+
+  .card-luxury {
+    @apply relative overflow-hidden rounded-2xl glass transition-all duration-700
+           hover:border-gold-500/30 hover:shadow-2xl hover:shadow-gold-500/10
+           cursor-pointer;
+  }
+
+  .video-overlay {
+    @apply absolute inset-0 bg-gradient-to-b from-luxury-darker/60 via-luxury-darker/40 to-luxury-darker;
+  }
+
+  .parallax-section {
+    @apply relative min-h-screen flex items-center justify-center overflow-hidden;
+  }
+}
+
+@layer utilities {
+  .text-shadow-glow {
+    text-shadow: 0 0 40px rgba(212, 175, 55, 0.5), 0 0 80px rgba(212, 175, 55, 0.3);
+  }
+
+  .border-gradient {
+    border-image: linear-gradient(135deg, #d4af37, #fcd34d, #d4af37) 1;
+  }
+
+  .mask-fade-bottom {
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  }
+
+  .mask-fade-top {
+    mask-image: linear-gradient(to top, black 60%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to top, black 60%, transparent 100%);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #d4af37, #b8860b);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #fcd34d, #d4af37);
+}
+
+/* Video background styles */
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Noise texture overlay */
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* Floating particles animation */
+@keyframes particle-float {
+  0%, 100% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: linear-gradient(135deg, #d4af37, #fcd34d);
+  border-radius: 50%;
+  animation: particle-float 15s infinite ease-in-out;
+}
