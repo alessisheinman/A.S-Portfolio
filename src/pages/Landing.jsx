@@ -370,27 +370,25 @@ const AboutSection = () => {
             transition={{ duration: 0.8 }}
           >
             <span className="inline-block px-4 py-1.5 mb-6 text-xs font-semibold uppercase tracking-wider text-purple-400 bg-purple-500/10 border border-purple-500/20 rounded-full">
-              About Us
+              About
             </span>
             <h2 className="font-display font-black text-4xl md:text-6xl mb-6 leading-tight">
               <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                Meet
+                Building the
               </span>
               <br />
               <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-                Adam
+                Future
               </span>
             </h2>
             <p className="text-lg text-gray-400 mb-6 leading-relaxed">
-              I'm <span className="text-white">Adam Alessi-Sheinman</span>, an AI Engineer and Software Developer based in New York City. With a B.S. in Computer Science from the University of Wisconsin-Madison and experience building intelligent systems at Radical AI, I specialize in creating
-              <span className="text-white"> modern, high-performance web applications </span>
-              that help businesses thrive.
+              I'm <span className="text-white">Adam Alessi-Sheinman</span> — a software engineer with a background in AI development and a passion for building digital products that make an impact. My focus now is on helping businesses establish a powerful online presence through modern, conversion-driven web applications.
             </p>
             <p className="text-lg text-gray-400 mb-8 leading-relaxed">
-              My expertise spans AI/ML integration, full-stack development, and crafting pixel-perfect user experiences. I leverage cutting-edge tools and technologies to deliver websites that don't just look stunning — they convert visitors into customers.
+              Every project I take on is an opportunity to combine technical precision with creative problem-solving. I'm committed to delivering solutions that not only meet today's standards but are built to scale and evolve with your business.
             </p>
             <div className="flex flex-wrap gap-4">
-              {['React', 'Tailwind', 'Framer Motion', 'Responsive'].map((tech) => (
+              {['React', 'Tailwind', 'AI Integration', 'Scalable Solutions'].map((tech) => (
                 <span key={tech} className="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300 font-medium">
                   {tech}
                 </span>
@@ -412,17 +410,17 @@ const AboutSection = () => {
                 <div className="p-3 bg-gradient-to-br from-purple-500 to-blue-500 rounded-xl">
                   <HiSparkles className="text-2xl text-white" />
                 </div>
-                <h3 className="font-display font-bold text-2xl text-white">My Approach</h3>
+                <h3 className="font-display font-bold text-2xl text-white">What I Deliver</h3>
               </div>
               <p className="text-gray-300 leading-relaxed mb-6">
-                I combine cutting-edge AI tools with years of software engineering experience to deliver exceptional results. Every project gets my full attention — from initial concept to final deployment.
+                I partner with businesses to create digital experiences that drive real results. From concept to launch, I handle every detail so you can focus on what matters — growing your business.
               </p>
               <div className="space-y-3">
                 {[
-                  'Pixel-perfect, responsive designs',
-                  'SEO-optimized from the ground up',
-                  'Lightning-fast load times',
-                  'Built for conversions'
+                  'Clean, modern designs that convert',
+                  'Performance-optimized architecture',
+                  'Ongoing support & scalability',
+                  'Clear communication throughout'
                 ].map((item, index) => (
                   <div key={index} className="flex items-center gap-3">
                     <div className="flex-shrink-0 w-5 h-5 bg-gradient-to-br from-emerald-400 to-emerald-500 rounded-full flex items-center justify-center">
