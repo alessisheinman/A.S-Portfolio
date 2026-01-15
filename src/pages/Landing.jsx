@@ -374,20 +374,20 @@ const AboutSection = () => {
             </span>
             <h2 className="font-display font-black text-4xl md:text-6xl mb-6 leading-tight">
               <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                Crafting Digital
+                Meet
               </span>
               <br />
               <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-                Experiences
+                Adam
               </span>
             </h2>
             <p className="text-lg text-gray-400 mb-6 leading-relaxed">
-              We believe every small business deserves a world-class online presence. Our templates aren't just websites — they're
-              <span className="text-white"> revenue-generating machines </span>
-              designed to convert visitors into loyal customers.
+              I'm <span className="text-white">Adam Alessi-Sheinman</span>, an AI Engineer and Software Developer based in New York City. With a B.S. in Computer Science from the University of Wisconsin-Madison and experience building intelligent systems at Radical AI, I specialize in creating
+              <span className="text-white"> modern, high-performance web applications </span>
+              that help businesses thrive.
             </p>
             <p className="text-lg text-gray-400 mb-8 leading-relaxed">
-              Based in NYC, we understand the unique needs of local businesses — from dentists to restaurants, dry cleaners to boutiques. Each template is crafted with industry-specific features that actually drive results.
+              My expertise spans AI/ML integration, full-stack development, and crafting pixel-perfect user experiences. I leverage cutting-edge tools and technologies to deliver websites that don't just look stunning — they convert visitors into customers.
             </p>
             <div className="flex flex-wrap gap-4">
               {['React', 'Tailwind', 'Framer Motion', 'Responsive'].map((tech) => (
@@ -412,10 +412,10 @@ const AboutSection = () => {
                 <div className="p-3 bg-gradient-to-br from-purple-500 to-blue-500 rounded-xl">
                   <HiSparkles className="text-2xl text-white" />
                 </div>
-                <h3 className="font-display font-bold text-2xl text-white">Our Mission</h3>
+                <h3 className="font-display font-bold text-2xl text-white">My Approach</h3>
               </div>
               <p className="text-gray-300 leading-relaxed mb-6">
-                To democratize premium web design for small businesses. We combine cutting-edge technology with stunning aesthetics to create websites that don't just look good — they perform.
+                I combine cutting-edge AI tools with years of software engineering experience to deliver exceptional results. Every project gets my full attention — from initial concept to final deployment.
               </p>
               <div className="space-y-3">
                 {[
