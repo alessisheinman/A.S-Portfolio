@@ -1,9 +1,9 @@
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import {
   FaTooth, FaTshirt, FaShoppingBag, FaUtensils, FaExternalLinkAlt,
-  FaCode, FaRocket, FaPalette, FaMobile, FaEnvelope, FaPhone,
-  FaMapMarkerAlt, FaArrowRight, FaStar, FaQuoteLeft, FaCheck,
-  FaInstagram, FaTwitter, FaLinkedinIn, FaGithub, FaBars, FaTimes,
+  FaCode, FaRocket, FaPalette, FaMobile, FaEnvelope,
+  FaMapMarkerAlt, FaArrowRight, FaStar, FaCheck,
+  FaLinkedinIn, FaGithub, FaBars, FaTimes,
   FaPlane
 } from 'react-icons/fa';
 import { HiSparkles, HiLightningBolt, HiCube, HiGlobe } from 'react-icons/hi';
@@ -33,6 +33,8 @@ const Navigation = () => {
   return (
     <>
       <motion.nav
+        role="navigation"
+        aria-label="Main navigation"
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
@@ -94,6 +96,9 @@ const Navigation = () => {
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="md:hidden p-2 text-white"
+            aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-menu"
           >
             {isMobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
           </button>
@@ -104,6 +109,9 @@ const Navigation = () => {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
+            id="mobile-menu"
+            role="dialog"
+            aria-label="Mobile navigation menu"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -199,7 +207,7 @@ const HeroSection = () => {
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
-    <section ref={containerRef} id="home" className="relative min-h-screen flex items-center justify-center px-6 pt-20">
+    <section ref={containerRef} id="home" aria-label="Welcome" className="relative min-h-screen flex items-center justify-center px-6 pt-20">
       <motion.div style={{ y, opacity }} className="relative z-10 text-center max-w-6xl mx-auto">
         {/* Floating badge */}
         <motion.div
@@ -319,7 +327,7 @@ const StatsSection = () => {
   ];
 
   return (
-    <section className="relative z-10 py-20 px-6">
+    <section aria-label="Key statistics" className="relative z-10 py-20 px-6">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -359,7 +367,7 @@ const StatsSection = () => {
 // ============================================================================
 const AboutSection = () => {
   return (
-    <section id="about" className="relative z-10 py-32 px-6">
+    <section id="about" aria-labelledby="about-heading" className="relative z-10 py-32 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left content */}
@@ -372,7 +380,7 @@ const AboutSection = () => {
             <span className="inline-block px-4 py-1.5 mb-6 text-xs font-semibold uppercase tracking-wider text-purple-400 bg-purple-500/10 border border-purple-500/20 rounded-full">
               About
             </span>
-            <h2 className="font-display font-black text-4xl md:text-6xl mb-6 leading-tight">
+            <h2 id="about-heading" className="font-display font-black text-4xl md:text-6xl mb-6 leading-tight">
               <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
                 Building the
               </span>
@@ -470,7 +478,7 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="services" className="relative z-10 py-32 px-6">
+    <section id="services" aria-labelledby="services-heading" className="relative z-10 py-32 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Section header */}
         <motion.div
@@ -483,7 +491,7 @@ const ServicesSection = () => {
           <span className="inline-block px-4 py-1.5 mb-6 text-xs font-semibold uppercase tracking-wider text-purple-400 bg-purple-500/10 border border-purple-500/20 rounded-full">
             What We Do
           </span>
-          <h2 className="font-display font-black text-4xl md:text-6xl lg:text-7xl mb-6">
+          <h2 id="services-heading" className="font-display font-black text-4xl md:text-6xl lg:text-7xl mb-6">
             <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
               Services That
             </span>
@@ -493,7 +501,7 @@ const ServicesSection = () => {
             </span>
           </h2>
           <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">
-            Here to confidently showcase your buisness to the world.
+            Here to confidently showcase your business to the world.
           </p>
         </motion.div>
 
@@ -615,7 +623,7 @@ const TemplatesSection = () => {
   ];
 
   return (
-    <section id="templates" className="relative z-10 py-32 px-6">
+    <section id="templates" aria-labelledby="templates-heading" className="relative z-10 py-32 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Section header */}
         <motion.div
@@ -628,7 +636,7 @@ const TemplatesSection = () => {
           <span className="inline-block px-4 py-1.5 mb-6 text-xs font-semibold uppercase tracking-wider text-purple-400 bg-purple-500/10 border border-purple-500/20 rounded-full">
             Our Work
           </span>
-          <h2 className="font-display font-black text-4xl md:text-6xl lg:text-7xl mb-6">
+          <h2 id="templates-heading" className="font-display font-black text-4xl md:text-6xl lg:text-7xl mb-6">
             <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
               Template
             </span>
@@ -708,7 +716,7 @@ const TemplatesSection = () => {
 // ============================================================================
 const ContactSection = () => {
   return (
-    <section id="contact" className="relative z-10 py-32 px-6">
+    <section id="contact" aria-labelledby="contact-heading" className="relative z-10 py-32 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="relative">
           {/* Background glow */}
@@ -730,7 +738,7 @@ const ContactSection = () => {
                 Let's Work Together
               </span>
 
-              <h2 className="font-display font-black text-4xl md:text-6xl lg:text-7xl mb-6">
+              <h2 id="contact-heading" className="font-display font-black text-4xl md:text-6xl lg:text-7xl mb-6">
                 <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
                   Ready to
                 </span>
@@ -744,26 +752,16 @@ const ContactSection = () => {
                 Let's discuss how we can create a stunning website that drives real results for your business.
               </p>
 
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+              <div className="flex items-center justify-center mb-12">
                 <motion.a
-                  href="mailto:hello@studio.com"
+                  href="mailto:alessisheinman@gmail.com"
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
                   className="group flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-purple-600 via-purple-500 to-blue-600 rounded-xl font-semibold text-white shadow-2xl shadow-purple-500/30 hover:shadow-purple-500/50 transition-all duration-300"
                 >
                   <FaEnvelope />
-                  <span>hello@studio.com</span>
+                  <span>alessisheinman@gmail.com</span>
                   <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
-                </motion.a>
-
-                <motion.a
-                  href="tel:+1234567890"
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
-                  className="flex items-center gap-3 px-8 py-4 bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-xl font-semibold text-white hover:bg-white/[0.08] hover:border-white/20 transition-all duration-300"
-                >
-                  <FaPhone />
-                  <span>(123) 456-7890</span>
                 </motion.a>
               </div>
 
@@ -784,14 +782,12 @@ const ContactSection = () => {
 // ============================================================================
 const Footer = () => {
   const socialLinks = [
-    { icon: FaInstagram, href: '#', label: 'Instagram' },
-    { icon: FaTwitter, href: '#', label: 'Twitter' },
-    { icon: FaLinkedinIn, href: '#', label: 'LinkedIn' },
-    { icon: FaGithub, href: '#', label: 'GitHub' },
+    { icon: FaLinkedinIn, href: 'https://www.linkedin.com/in/adam-alessi-sheinman-938bb9222/', label: 'LinkedIn' },
+    { icon: FaGithub, href: 'https://github.com/alessisheinman', label: 'GitHub' },
   ];
 
   return (
-    <footer className="relative z-10 border-t border-white/5">
+    <footer role="contentinfo" aria-label="Site footer" className="relative z-10 border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
@@ -840,8 +836,7 @@ const Footer = () => {
           <div>
             <h4 className="font-display font-bold text-white mb-4">Contact</h4>
             <ul className="space-y-2 text-gray-400">
-              <li>hello@studio.com</li>
-              <li>(123) 456-7890</li>
+              <li>alessisheinman@gmail.com</li>
               <li>New York, NY</li>
             </ul>
           </div>
@@ -880,6 +875,14 @@ const Landing = () => {
 
   return (
     <div className="relative min-h-screen bg-void-950 overflow-hidden">
+      {/* Skip to main content link for keyboard users */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-purple-600 focus:text-white focus:rounded-lg"
+      >
+        Skip to main content
+      </a>
+
       {/* Animated background */}
       <AnimatedBackground mousePosition={mousePosition} />
 
@@ -887,7 +890,7 @@ const Landing = () => {
       <Navigation />
 
       {/* Main content */}
-      <main>
+      <main id="main-content" role="main">
         <HeroSection />
         <StatsSection />
         <AboutSection />

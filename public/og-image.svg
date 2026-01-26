@@ -1,0 +1,7 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="630" rx="24" fill="#030014"/>
+
+  <!-- A.S Logo -->
+  <text x="600" y="350" font-family="Arial, sans-serif" font-size="200" font-weight="bold" fill="white" text-anchor="middle">A.S</text>
+</svg>

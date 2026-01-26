@@ -1,0 +1,6 @@
+# robots.txt for A.S Portfolio
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://alessisheinman.github.io/A.S-Portfolio/sitemap.xml
