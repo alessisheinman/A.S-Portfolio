@@ -27,7 +27,6 @@ const Navigation = () => {
     { name: 'About', href: '#about' },
     { name: 'Services', href: '#services' },
     { name: 'Work', href: '#templates' },
-    { name: 'Contact', href: '#footer' },
   ];
 
   return (
@@ -80,7 +79,7 @@ const Navigation = () => {
 
           {/* CTA Button */}
           <motion.a
-            href="#contact"
+            href="#templates"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.5 }}
@@ -88,7 +87,7 @@ const Navigation = () => {
             whileTap={{ scale: 0.95 }}
             className="hidden md:flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full text-sm font-semibold text-white shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 transition-all duration-300"
           >
-            Get Started
+            View Work
             <FaArrowRight className="text-xs" />
           </motion.a>
 
@@ -132,14 +131,14 @@ const Navigation = () => {
                 </motion.a>
               ))}
               <motion.a
-                href="#contact"
+                href="#templates"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="mt-4 flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl text-lg font-semibold text-white"
               >
-                Get Started
+                View Work
                 <FaArrowRight />
               </motion.a>
             </div>
@@ -273,12 +272,12 @@ const HeroSection = () => {
           </motion.a>
 
           <motion.a
-            href="#contact"
+            href="#about"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
             className="px-8 py-4 bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-xl font-semibold text-white hover:bg-white/[0.08] hover:border-white/20 transition-all duration-300"
           >
-            Get in Touch
+            Learn More
           </motion.a>
         </motion.div>
 
@@ -822,22 +821,13 @@ const Footer = () => {
           <div>
             <h4 className="font-display font-bold text-white mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              {['Home', 'About', 'Services', 'Work', 'Contact'].map((link) => (
+              {['Home', 'About', 'Services', 'Work'].map((link) => (
                 <li key={link}>
                   <a href={`#${link.toLowerCase()}`} className="text-gray-400 hover:text-white transition-colors">
                     {link}
                   </a>
                 </li>
               ))}
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h4 className="font-display font-bold text-white mb-4">Contact</h4>
-            <ul className="space-y-2 text-gray-400">
-              <li>alessisheinman@gmail.com</li>
-              <li>New York, NY</li>
             </ul>
           </div>
         </div>
