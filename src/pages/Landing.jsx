@@ -27,7 +27,7 @@ const Navigation = () => {
     { name: 'About', href: '#about' },
     { name: 'Services', href: '#services' },
     { name: 'Work', href: '#templates' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Contact', href: '#footer' },
   ];
 
   return (
@@ -787,7 +787,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer role="contentinfo" aria-label="Site footer" className="relative z-10 border-t border-white/5">
+    <footer id="footer" role="contentinfo" aria-label="Site footer" className="relative z-10 border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
@@ -896,7 +896,6 @@ const Landing = () => {
         <AboutSection />
         <ServicesSection />
         <TemplatesSection />
-        <ContactSection />
       </main>
 
       {/* Footer */}
